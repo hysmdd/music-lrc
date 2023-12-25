@@ -15,7 +15,7 @@ audio {
 }
 
 .container {
-    height: 420px;
+    height: 550px;
     overflow: hidden;
     /* border: 2px solid #fff; */
 }
@@ -28,7 +28,8 @@ audio {
 
 .container li {
     font-size: 18px;
-    height: 30px;
+    height: 40px;
+    line-height: 2.5em;
     transition: 0.3s;
 }
 
