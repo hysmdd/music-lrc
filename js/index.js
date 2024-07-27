@@ -66,13 +66,13 @@ var maxOffset = doms.ul.clientHeight - containerHeight;
 function setOffset() {
   var index = findIndex();
   var offset = liHeight * index + liHeight / 2 - containerHeight / 2;
-  if (offset < 0) {
-    offset = 0;
-  }
-  if (offset > maxOffset) {
+  // if (offset < 0) {
+  //   offset = -containerHeight / 2 + liHeight * index + liHeight / 2;
+  // }
+  if (offset > maxOffset && offset != -containerHeight / 2) {
     offset = maxOffset;
   }
-  doms.ul.style.transform = `translateY(-${offset}px)`;
+  doms.ul.style.transform = "translateY(" + -offset + "px)";
   // 去掉之前的active样式
   var li = doms.ul.querySelector(".active");
   if (li) {
@@ -84,5 +84,7 @@ function setOffset() {
   }
   //   console.log(liHeight * index + liHeight / 2 - containerHeight / 2);
 }
+
+setOffset();
 
 doms.audio.addEventListener("timeupdate", setOffset);
